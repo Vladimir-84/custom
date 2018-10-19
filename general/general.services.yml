@@ -1,0 +1,82 @@
+services:
+  general.storage.accredible_group:
+    class: Drupal\general\Entity\Storage\AccredibleGroupStorage
+    factory: 'entity_type.manager:getStorage'
+    arguments:
+      - accredible_group
+  general.storage.activity:
+    class: Drupal\general\Entity\Storage\ActivityStorage
+    factory: 'entity_type.manager:getStorage'
+    arguments:
+      - activity
+  general.storage.certificate:
+    class: Drupal\general\Entity\Storage\CertificateStorage
+    factory: 'entity_type.manager:getStorage'
+    arguments:
+      - certificate
+  general.storage.company:
+    class: Drupal\general\Entity\Storage\CompanyStorage
+    factory: 'entity_type.manager:getStorage'
+    arguments:
+      - company
+  general.storage.course:
+    class: Drupal\general\Entity\Storage\CourseStorage
+    factory: 'entity_type.manager:getStorage'
+    arguments:
+      - course
+  general.storage.course_progress:
+    class: Drupal\general\Entity\Storage\CourseProgressStorage
+    factory: 'entity_type.manager:getStorage'
+    arguments:
+      - course_progress
+  general.storage.grade:
+    class: Drupal\general\Entity\Storage\GradeStorage
+    factory: 'entity_type.manager:getStorage'
+    arguments:
+      - grade
+  general.storage.learning_path:
+    class: Drupal\general\Entity\Storage\LearningPathStorage
+    factory: 'entity_type.manager:getStorage'
+    arguments:
+      - learning_path
+  general.storage.student:
+    class: Drupal\general\Entity\Storage\StudentStorage
+    factory: 'entity_type.manager:getStorage'
+    arguments:
+      - student
+  general.cron.job.automation_academy:
+    class: Drupal\general\AutomationAcademyCronJob
+    arguments:
+      - '@automation_academy.api'
+      - '@queue'
+      - '@state'
+  general.cron.job.accredible:
+    class: Drupal\general\AccredibleCronJob
+    arguments:
+      - '@accredible.api'
+      - '@queue'
+      - '@state'
+  general.entity.external_resolver:
+    class: Drupal\general\Services\EntityExternalResolver
+    arguments:
+      - '@database'
+  general.storage.learning_path_status:
+    class: Drupal\general\Entity\Storage\LearningPathStatusStorage
+    factory: 'entity_type.manager:getStorage'
+    arguments:
+      - learning_path_status
+  general.services.course:
+    class: Drupal\general\Services\CourseReportService
+    arguments:
+      - '@database'
+  general.services.progress_report.learning_path:
+    class: Drupal\general\Services\ProgressReport\LearningPathService
+    arguments:
+      - '@general.storage.certificate'
+      - '@general.storage.learning_path'
+      - '@general.storage.learning_path_status'
+      - '@general.services.course'
+  general.services.progress_report.company:
+    class: Drupal\general\Services\ProgressReport\CompanyService
+    arguments:
+      - '@database'

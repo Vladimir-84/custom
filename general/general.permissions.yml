@@ -1,0 +1,182 @@
+# Accredible permissions.
+add accredible_group entities:
+  title: 'Create new Accredible Group'
+
+administer accredible_group entities:
+  title: 'Administer Accredible Group entities'
+  description: 'Allow to access the administration form to configure Accredible Group entities.'
+  restrict access: true
+
+delete accredible_group entities:
+  title: 'Delete Accredible Group'
+
+edit accredible_group entities:
+  title: 'Edit Accredible Group'
+
+view accredible_group entities:
+  title: 'View Accredible Group'
+
+# Activity permissions.
+add activity entities:
+  title: 'Create new Activity'
+
+administer activity entities:
+  title: 'Administer Activity entities'
+  description: 'Allow to access the administration form to configure Activity entities.'
+  restrict access: true
+
+delete activity entities:
+  title: 'Delete Activity'
+
+edit activity entities:
+  title: 'Edit Activity'
+
+view activity entities:
+  title: 'View Activity'
+
+# Certificate permissions.
+add certificate entities:
+  title: 'Create new Certificate'
+
+administer certificate entities:
+  title: 'Administer Certificate entities'
+  description: 'Allow to access the administration form to configure Certificate entities.'
+  restrict access: true
+
+delete certificate entities:
+  title: 'Delete Certificate'
+
+edit certificate entity entities:
+  title: 'Edit Certificate'
+
+view certificate entities:
+  title: 'View Certificate'
+
+# Company permissions.
+add company entities:
+  title: 'Create new Company'
+
+administer company entities:
+  title: 'Administer Company entities'
+  description: 'Allow to access the administration form to configure Company entities.'
+  restrict access: true
+
+delete company entities:
+  title: 'Delete Company'
+
+merge company entities:
+  title: 'Merge Company'
+
+edit company entities:
+  title: 'Edit Company'
+
+view company entities:
+  title: 'View Company'
+
+# Course permissions.
+add course entities:
+  title: 'Create new Course'
+
+delete course entities:
+  title: 'Delete Course'
+
+edit course entities:
+  title: 'Edit Course'
+
+view course entities:
+  title: 'View Course'
+
+administer course entities:
+  title: 'Administer Course entities'
+  description: 'Allow to access the administration form to configure Course entities.'
+  restrict access: true
+
+# Course Progress permissions
+add course_progress entities:
+  title: 'Create new Course Progress'
+
+administer course_progress entities:
+  title: 'Administer Course Progress'
+  description: 'Allow to access the administration form to configure Course Progress entities.'
+  restrict access: true
+
+delete course_progress entities:
+  title: 'Delete Course Progress'
+
+edit course_progress entities:
+  title: 'Edit Course Progress'
+
+view course_progress entities:
+  title: 'View Course Progress'
+
+# Grade permissions.
+add grade entities:
+  title: 'Create new Grade'
+
+administer grade entities:
+  title: 'Administer Grade'
+  description: 'Allow to access the administration form to configure Grade entities.'
+  restrict access: true
+
+delete grade entities:
+  title: 'Delete Grade'
+
+edit grade entities:
+  title: 'Edit Grade'
+
+view grade entities:
+  title: 'View Grade'
+
+# Learning Path permissions.
+add learning_path entities:
+  title: 'Create new Learning Path'
+
+administer learning_path entities:
+  title: 'Administer Learning Path entity entities'
+  description: 'Allow to access the administration form to configure Learning Path entities.'
+  restrict access: true
+
+delete learning_path entities:
+  title: 'Delete Learning Path'
+
+edit learning_path entities:
+  title: 'Edit Learning Path'
+
+view learning_path entities:
+  title: 'View Learning Path'
+
+# Student permissions.
+add student entities:
+  title: 'Create new Student'
+
+administer student entities:
+  title: 'Administer Student entities'
+  description: 'Allow to access the administration form to configure Student entities.'
+  restrict access: true
+
+delete student entities:
+  title: 'Delete Student'
+
+edit student entities:
+  title: 'Edit Student'
+
+view student entities:
+  title: 'View Student'
+
+# Learning Path Status permissions.
+add learning_path_status entities:
+  title: 'Create new Learning Path Status'
+
+administer learning_path_status entities:
+  title: 'Administer Learning Path Status entity entities'
+  description: 'Allow to access the administration form to configure Learning Path entities.'
+  restrict access: true
+
+delete learning_path_status entities:
+  title: 'Delete Learning Path Status'
+
+edit learning_path_status entities:
+  title: 'Edit Learning Path Status'
+
+view learning_path_status entities:
+  title: 'View Learning Path Status'

@@ -1,0 +1,69 @@
+# Accredible Group actions.
+entity.accredible_group.add_form:
+  route_name: entity.accredible_group.add_form
+  title: 'Add Accredible Group'
+  appears_on:
+    - entity.accredible_group.collection
+
+# Activity actions.
+entity.activity.add_form:
+  route_name: entity.activity.add_form
+  title: 'Add Activity'
+  appears_on:
+    - entity.activity.collection
+
+# Certificate actions.
+entity.certificate.add_form:
+  route_name: entity.certificate.add_form
+  title: 'Add Certificate'
+  appears_on:
+    - entity.certificate.collection
+
+# Company actions.
+entity.company.add_form:
+  route_name: entity.company.add_form
+  title: 'Add Company'
+  appears_on:
+    - entity.company.collection
+
+# Course actions.
+entity.course.add_form:
+  route_name: entity.course.add_form
+  title: 'Add Course'
+  appears_on:
+    - entity.course.collection
+
+# Course Progress actions.
+entity.course_progress.add_form:
+  route_name: entity.course_progress.add_form
+  title: 'Add Course Progress'
+  appears_on:
+    - entity.course_progress.collection
+
+# Grade actions.
+entity.grade.add_form:
+  route_name: entity.grade.add_form
+  title: 'Add Grade'
+  appears_on:
+    - entity.grade.collection
+
+# Learning Path actions.
+entity.learning_path.add_form:
+  route_name: entity.learning_path.add_form
+  title: 'Add Learning Path'
+  appears_on:
+    - entity.learning_path.collection
+
+# Student actions.
+entity.student.add_form:
+  route_name: entity.student.add_form
+  title: 'Add Student'
+  appears_on:
+    - entity.student.collection
+
+# Learning Path Status actions.
+entity.learning_path.add_form:
+  route_name: entity.learning_path_status.add_form
+  title: 'Add Learning Path Status'
+  appears_on:
+    - entity.learning_path_status.collection

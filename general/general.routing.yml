@@ -1,0 +1,7 @@
+general.init:
+  path: '/admin/system/initialize'
+  defaults:
+    _controller: '\Drupal\general\Controller\SiteController::initialize'
+    _title: 'Initialize'
+  requirements:
+    _permission: 'administer site configuration'

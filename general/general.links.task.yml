@@ -1,0 +1,175 @@
+# Accredible Group routing definition
+entity.accredible_group.canonical:
+  route_name: entity.accredible_group.canonical
+  base_route: entity.accredible_group.canonical
+  title: 'View'
+
+entity.accredible_group.edit_form:
+  route_name: entity.accredible_group.edit_form
+  base_route: entity.accredible_group.canonical
+  title: 'Edit'
+
+entity.accredible_group.delete_form:
+  route_name:  entity.accredible_group.delete_form
+  base_route:  entity.accredible_group.canonical
+  title: 'Delete'
+  weight: 10
+
+# Activity routing definition
+entity.activity.canonical:
+  route_name: entity.activity.canonical
+  base_route: entity.activity.canonical
+  title: 'View'
+
+entity.activity.edit_form:
+  route_name: entity.activity.edit_form
+  base_route: entity.activity.canonical
+  title: 'Edit'
+
+entity.activity.delete_form:
+  route_name:  entity.activity.delete_form
+  base_route:  entity.activity.canonical
+  title: 'Delete'
+  weight: 10
+
+# Certificate routing definition
+entity.certificate.canonical:
+  route_name: entity.certificate.canonical
+  base_route: entity.certificate.canonical
+  title: 'View'
+
+entity.certificate.edit_form:
+  route_name: entity.certificate.edit_form
+  base_route: entity.certificate.canonical
+  title: 'Edit'
+
+entity.certificate.delete_form:
+  route_name:  entity.certificate.delete_form
+  base_route:  entity.certificate.canonical
+  title: 'Delete'
+  weight: 10
+
+# Company routing definition
+entity.company.canonical:
+  route_name: entity.company.canonical
+  base_route: entity.company.canonical
+  title: 'View'
+
+entity.company.edit_form:
+  route_name: entity.company.edit_form
+  base_route: entity.company.canonical
+  title: 'Edit'
+
+entity.company.merge_form:
+  route_name:  entity.company.merge_form
+  base_route:  entity.company.canonical
+  title: 'Merge'
+  weight: 5
+
+entity.company.delete_form:
+  route_name:  entity.company.delete_form
+  base_route:  entity.company.canonical
+  title: 'Delete'
+  weight: 10
+
+# Course routing definition
+entity.course.canonical:
+  route_name: entity.course.canonical
+  base_route: entity.course.canonical
+  title: 'View'
+
+entity.course.edit_form:
+  route_name: entity.course.edit_form
+  base_route: entity.course.canonical
+  title: 'Edit'
+
+entity.course.delete_form:
+  route_name:  entity.course.delete_form
+  base_route:  entity.course.canonical
+  title: 'Delete'
+  weight: 10
+
+# Course Progress routing definition
+entity.course_progress.canonical:
+  route_name: entity.course_progress.canonical
+  base_route: entity.course_progress.canonical
+  title: 'View'
+
+entity.course_progress.edit_form:
+  route_name: entity.course_progress.edit_form
+  base_route: entity.course_progress.canonical
+  title: 'Edit'
+
+entity.course_progress.delete_form:
+  route_name:  entity.course_progress.delete_form
+  base_route:  entity.course_progress.canonical
+  title: 'Delete'
+  weight: 10
+
+# Grade routing definition
+entity.grade.canonical:
+  route_name: entity.grade.canonical
+  base_route: entity.grade.canonical
+  title: 'View'
+
+entity.grade.edit_form:
+  route_name: entity.grade.edit_form
+  base_route: entity.grade.canonical
+  title: 'Edit'
+
+entity.grade.delete_form:
+  route_name:  entity.grade.delete_form
+  base_route:  entity.grade.canonical
+  title: 'Delete'
+  weight: 10
+
+# Learning Path routing definition
+entity.learning_path.canonical:
+  route_name: entity.learning_path.canonical
+  base_route: entity.learning_path.canonical
+  title: 'View'
+
+entity.learning_path.edit_form:
+  route_name: entity.learning_path.edit_form
+  base_route: entity.learning_path.canonical
+  title: 'Edit'
+
+entity.learning_path.delete_form:
+  route_name:  entity.learning_path.delete_form
+  base_route:  entity.learning_path.canonical
+  title: 'Delete'
+  weight: 10
+
+# Student routing definition
+entity.student.canonical:
+  route_name: entity.student.canonical
+  base_route: entity.student.canonical
+  title: 'View'
+
+entity.student.edit_form:
+  route_name: entity.student.edit_form
+  base_route: entity.student.canonical
+  title: 'Edit'
+
+entity.student.delete_form:
+  route_name:  entity.student.delete_form
+  base_route:  entity.student.canonical
+  title: Delete
+  weight: 10
+
+# Learning Path Status routing definition
+entity.learning_path_status.canonical:
+  route_name: entity.learning_path_status.canonical
+  base_route: entity.learning_path_status.canonical
+  title: 'View'
+
+entity.learning_path_status.edit_form:
+  route_name: entity.learning_path_status.edit_form
+  base_route: entity.learning_path_status.canonical
+  title: 'Edit'
+
+entity.learning_path_status.delete_form:
+  route_name:  entity.learning_path_status.delete_form
+  base_route:  entity.learning_path_status.canonical
+  title: 'Delete'
+  weight: 10

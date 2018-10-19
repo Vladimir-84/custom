@@ -1,0 +1,8 @@
+name: 'General'
+type: module
+core: 8.x
+package: 'general'
+dependencies:
+  - drupal:options
+  - accredible:accredible
+  - ultimate_cron:ultimate_cron

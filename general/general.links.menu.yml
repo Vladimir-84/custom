@@ -1,0 +1,130 @@
+# Accredible Group menu items definition
+entity.accredible_group.collection:
+  title: 'Accredible Groups'
+  route_name: entity.accredible_group.collection
+  description: 'List of Accredible Groups'
+  parent: system.admin_content
+  weight: 0
+
+entity.accredible_group.add_form:
+  title: 'Add Accredible Group'
+  route_name: entity.accredible_group.add_form
+  parent: entity.accredible_group.collection
+
+# Activity menu items definition
+entity.activity.collection:
+  title: 'Activities'
+  route_name: entity.activity.collection
+  description: 'List of Activities'
+  parent: system.admin_content
+  weight: 5
+
+entity.activity.add_form:
+  title: 'Add Activity'
+  route_name: entity.activity.add_form
+  parent: entity.activity.collection
+
+# Certificate entity menu items definition
+entity.certificate.collection:
+  title: 'Certificates'
+  route_name: entity.certificate.collection
+  description: 'List of Certificates'
+  parent: system.admin_content
+  weight: 10
+
+entity.certificate.add_form:
+  title: 'Add Certificate'
+  route_name: entity.certificate.add_form
+  parent: entity.certificate.collection
+
+
+# Company menu items definition
+entity.company.collection:
+  title: 'Companies'
+  route_name: entity.company.collection
+  description: 'List of Companies'
+  parent: system.admin_content
+  weight: 15
+
+entity.company.add_form:
+  title: 'Add Company'
+  route_name: entity.company.add_form
+  parent: entity.company.collection
+
+# Course menu items definition
+entity.course.collection:
+  title: 'Courses'
+  route_name: entity.course.collection
+  description: 'List of Courses'
+  parent: system.admin_content
+  weight: 20
+
+entity.course.add_form:
+  title: 'Add Course'
+  route_name: entity.course.add_form
+  parent: entity.course.collection
+
+# Course Progress menu items definition
+entity.course_progress.collection:
+  title: 'Course Progress Entities'
+  route_name: entity.course_progress.collection
+  description: 'List of Course Progress entities'
+  parent: system.admin_content
+  weight: 25
+
+entity.course_progress.add_form:
+  title: 'Add Course Progress'
+  route_name: entity.course_progress.add_form
+  parent: entity.course_progress.collection
+
+# Grade menu items definition
+entity.grade.collection:
+  title: 'Grades'
+  route_name: entity.grade.collection
+  description: 'List of Grades'
+  parent: system.admin_content
+  weight: 30
+
+entity.grade.add_form:
+  title: 'Add Grade'
+  route_name: entity.grade.add_form
+  parent: entity.grade.collection
+
+# Learning path entity menu items definition
+entity.learning_path.collection:
+  title: 'Learning Paths'
+  route_name: entity.learning_path.collection
+  parent: system.admin_content
+  description: 'List of Learning Paths'
+  weight: 35
+
+entity.learning_path.add_form:
+  title: 'Add Learning Path'
+  route_name: entity.learning_path.add_form
+  parent: entity.learning_path.collection
+
+# Student menu items definition
+entity.student.collection:
+  title: 'Students'
+  route_name: entity.student.collection
+  description: 'List of Students'
+  parent: system.admin_content
+  weight: 40
+
+entity.student.add_form:
+  title: 'Add Student'
+  route_name: entity.student.add_form
+  parent: entity.student.collection
+
+# Learning path status entity menu items definition
+entity.learning_path_status.collection:
+  title: 'Learning Path Status'
+  route_name: entity.learning_path_status.collection
+  parent: system.admin_content
+  description: 'List of Learning Path Status'
+  weight: 45
+
+entity.learning_path_status.add_form:
+  title: 'Add Learning Path Status'
+  route_name: entity.learning_path_status.add_form
+  parent: entity.learning_path_status.collection
