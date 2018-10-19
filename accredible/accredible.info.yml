@@ -1,0 +1,5 @@
+name: Accredible
+type: module
+description: 'Accredible REST Integration'
+core: 8.x
+package: Web services

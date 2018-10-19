@@ -1,0 +1,7 @@
+accredible.config:
+  path: 'admin/config/services/accredible'
+  defaults:
+    _title: 'Accredible config'
+    _form: '\Drupal\accredible\Form\AccredibleSettings'
+  requirements:
+    _permission: 'administer site configuration'

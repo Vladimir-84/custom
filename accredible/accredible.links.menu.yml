@@ -1,0 +1,6 @@
+accredible.config:
+  title: 'Accredible setting form'
+  route_name: accredible.config
+  description: 'Accredible setting form.'
+  parent: system.admin_config_services
+  weight: 5
