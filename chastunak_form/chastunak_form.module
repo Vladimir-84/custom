@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * Implements hook_mail().
+ */
+function chastunak_form_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'chastunak_form':
+      $message['headers']['Content-Type'] = 'text/html';
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
+}
+
+/**
+ * Send email.
+ *
+ * @param string $email
+ *   Email.
+ * @param string $name
+ *   Name.
+ * @param string $phone
+ *   Name.
+ * @return bool
+ *   Bool.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ */
+function custom_mail_send($email, $name, $phone) {
+  $mailManager = \Drupal::service('plugin.manager.mail');
+  $module = 'chastunak_form';
+  $to = $email;
+
+  $body = "$name" . '<br />' . "Телефон: $phone";;
+
+  $subject = 'CHASTUNAK';
+
+  $params = [
+    'body' => $body,
+    'subject' => $subject,
+  ];
+
+  $result = $mailManager->mail($module, 'chastunak_form', $to, 'ru', $params, NULL, TRUE);
+  if ($result['result'] !== TRUE) {
+    \Drupal::logger($module)
+      ->error(t('There was a problem sending message and it was not sent.'));
+    return FALSE;
+  }
+  else {
+    return TRUE;
+  }
+}

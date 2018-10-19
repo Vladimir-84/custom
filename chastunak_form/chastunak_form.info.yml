@@ -1,0 +1,5 @@
+name: Chastunak form in Block
+description: Custom form
+core: 8.x
+type: module
+dependencies:

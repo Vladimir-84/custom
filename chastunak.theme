@@ -1,0 +1,143 @@
+<?php
+
+use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
+use Drupal\file\FileInterface;
+use Drupal\image\ImageStyleInterface;
+use Drupal\paragraphs\ParagraphInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function chastunak_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['paragraph'];
+  if (!($paragraph instanceof ParagraphInterface)) {
+    return;
+  }
+
+  if ($paragraph->getType() == 'header_page_block') {
+    if ($paragraph->hasField('field_background_block') && !$paragraph->get('field_background_block')
+        ->isEmpty()) {
+      $file = $paragraph->get('field_background_block')->entity;
+      if ($file instanceof FileInterface) {
+        try {
+          /** @var \Drupal\image\ImageStyleStorage $imageStyleStorage */
+          $imageStyleStorage = \Drupal::entityTypeManager()->getStorage('image_style');
+          $imageStyle = $imageStyleStorage->load('background');
+          if ($imageStyle instanceof ImageStyleInterface) {
+            $url = $imageStyle->buildUrl($file->getFileUri());
+            $url = file_url_transform_relative($url);
+            $style = 'background-image:url("' . $url . '");';
+            $variables['background'] = $style;
+          }
+        }
+        catch (InvalidPluginDefinitionException $e) {
+        }
+      }
+    }
+  }
+  if ($paragraph->getType() == 'contact_block') {
+    $variables['form'] = \Drupal::formBuilder()->getForm('\Drupal\chastunak_form\Form\ChastunakFormContact');
+  }
+  if ($paragraph->getType() == 'catalog') {
+    $tabs = [];
+    $vid = 'gift_categories';
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+    $tabs['all_present']['title'] = t('Все подарки');
+    $tabs['all_present']['content'] = [
+      '#type' => 'view',
+      '#name' => 'present',
+      '#display_id' => 'present_all_grid',
+    ];
+    $tabs['all_present']['id'] = 'all_present';
+    $tabs['all_present']['class'] = 'in active';
+    /** @var \Drupal\taxonomy\TermStorageInterface $term */
+    foreach ($terms as $term) {
+      $tabs[$term->name]['title'] = $term->name;
+      $tabs[$term->name]['content'] = [
+        '#type' => 'view',
+        '#name' => 'present',
+        '#display_id' => 'present_all_list',
+        '#arguments' => ['id' => $term->tid],
+      ];
+      $tabs[$term->name]['id'] = $term->tid;
+    }
+    $variables['tabs_catalog'] = _chastunak_get_tabs($tabs, 'catalog');
+  }
+
+}
+
+/**
+ * Get tabs.
+ *
+ * @param array $tabs
+ *   Tabs.
+ * @param string $class
+ *   Class.
+ *
+ * @return mixed
+ *   Output.
+ */
+function _chastunak_get_tabs(array $tabs, $class) {
+  $output['catalog'] = [
+    '#type' => 'container',
+    '#attributes' => [
+      'class' => [
+        $class
+      ],
+    ],
+  ];
+
+  if (!empty($tabs)) {
+    foreach ($tabs as $tab) {
+      $output['catalog']['tabs'][] = [
+        '#type' => 'html_tag',
+        '#tag' => 'li',
+        '#attributes' => [
+          'class' => [
+            'nav_item',
+            array_key_exists('class', $tab) ? 'active' : '',
+          ],
+        ],
+        '#value' => '<a href="#' . $tab['id'] . '" id="' . $tab['id'] . '-tab" data-toggle="tab">' . $tab['title'] . '</a>',
+      ];
+      $tmp = [
+        '#type' => 'html_tag',
+        '#tag' => 'div',
+        '#attributes' => [
+          'class' => [
+            'tab-pane fade',
+            array_key_exists('class', $tab) ? 'in active' : '',
+          ],
+          'id' => $tab['id'],
+        ],
+      ];
+      $tmp[] = $tab['content'];
+      $output['catalog']['content'][] = $tmp;
+    }
+
+    if (isset($output['catalog']['tabs'])) {
+      $output['catalog']['tabs'] += [
+        '#type' => 'html_tag',
+        '#tag' => 'ul',
+        '#attributes' => [
+          'class' => [
+            'nav nav-tabs',
+          ],
+        ],
+      ];
+    }
+    if (isset($output['catalog']['content'])) {
+      $output['catalog']['content'] += [
+        '#type' => 'html_tag',
+        '#tag' => 'div',
+        '#attributes' => [
+          'class' => [
+            'tab-content',
+          ],
+        ],
+      ];
+    }
+  }
+  return $output;
+}
